@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="{% static 'MindSweat.png' %}" >
+    <title>Live Workout</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        h1 {
+            text-align: right;
+            margin-right: 10px;
+            background-color: #FFFF00;
+            padding: 10px;
+            color: black;
+        }
+
+        body {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        select {
+            margin: 10px;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #ffff00;
+            color: #ffffff;
+            background-color: #1c1c1c;
+            border-radius: 5px;
+        }
+
+        #schedule {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #333333;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+            overflow-wrap: break-word;
+        }
+
+        #schedule p {
+            margin: 0;
+            padding-bottom: 5px;
+        }
+
+        #schedule p span {
+            font-weight: bold;
+            color: #ffff00;
+            display: inline-block;
+            width: 120px; /* Adjust as needed */
+        }
+
+        #schedule p:nth-child(odd) {
+            background-color: #555555;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #schedule p:nth-child(even) {
+            background-color: #777777;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+	{% include "header.html" %}
+<select id="workout-select">
+    <option value="workout1">Workout 1</option>
+    <option value="workout2">Workout 2</option>
+    <option value="workout3">Workout 3</option>
+</select>
+<select id="difficulty-select">
+    <option value="beginner">Beginner</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="advanced">Advanced</option>
+</select>
+<div id="schedule"></div>
+
+<script>
+    document.getElementById("workout-select").addEventListener("change", function() {
+        displaySchedule();
+    });
+
+    document.getElementById("difficulty-select").addEventListener("change", function() {
+        displaySchedule();
+    });
+
+    function displaySchedule() {
+        var selectedWorkout = document.getElementById("workout-select").value;
+        var selectedDifficulty = document.getElementById("difficulty-select").value;
+        var schedule = "";
+
+        if (selectedWorkout === "workout1") {
+            if (selectedDifficulty === "beginner") {
+                schedule = "<p><span>Monday:</span> chest, tricep</p><p><span>Tuesday:</span> break</p><p><span>Wednesday:</span> bicep, back</p><p><span>Friday:</span> shoulders, legs</p>";
+            } else if (selectedDifficulty === "intermediate") {
+                schedule = "<p><span>Monday:</span> chest, tricep, shoulders</p><p><span>Tuesday:</span> bicep, back, legs</p><p><span>Thursday:</span> same as Monday</p><p><span>Friday:</span> same as Tuesday</p>";
+            } else if (selectedDifficulty === "advanced") {
+                schedule = "<p><span>Monday:</span> chest, tricep</p><p><span>Tuesday:</span> back, biceps</p><p><span>Wednesday:</span> rest</p><p><span>Friday:</span> shoulders, legs</p>";
+            }
+        } else if (selectedWorkout === "workout2") {
+            if (selectedDifficulty === "beginner") {
+                schedule = "<p><span>Monday:</span> chest, back</p><p><span>Wednesday:</span> bicep, tricep</p><p><span>Friday:</span> legs, shoulders</p>";
+            } else if (selectedDifficulty === "intermediate" || selectedDifficulty === "advanced") {
+                schedule = "<p><span>Monday:</span> chest</p><p><span>Tuesday:</span> back</p><p><span>Wednesday:</span> bicep, tricep</p><p><span>Friday:</span> legs, shoulders</p>";
+            }
+        } else if (selectedWorkout === "workout3") {
+			if (selectedDifficulty === "beginner") {
+				schedule = "<p><span>Monday:</span> full body</p><p><span>Friday:</span> full body</p>";
+			} else if (selectedDifficulty === "intermediate" || selectedDifficulty === "advanced") {
+				schedule = "<p><span>Monday:</span> full body</p><p><span>Wednesday:</span> full body</p><p><span>Friday:</span> full body</p>";
+			}
+		}
+
+        document.getElementById("schedule").innerHTML = schedule;
+    }
+
+    function goToPage(url) {
+        window.location.href = url;
+    }
+
+    // Display schedule initially
+    displaySchedule();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<header id="topheader" style="border: 2px solid black;display: flex;justify-content: space-between;align-items: center;text-align: center;background-color: rgb(255, 255, 0);color: black;width: 100%;height: 100px;">
+  <p><a id="headertext" href="{% url 'home' %}" style="font-size: 30px;font-family: fantasy;letter-spacing: 2px;text-decoration: none;color: black;position: relative;top: 10px;left: 50px;border: 5px solid black;padding: 10px;">MindSweat</a></p>
+
+  <div class="navhead" style=" display: flex;background-color:yellow;justify-content: space-evenly;width: 900px;">
+    {% if user.is_authenticated %}
+      <a href="{% url 'profile' %}" class="menuItem" style="text-decoration: none;color: black;font-weight: bold;font-size: 20px;">DASHBOARD</a>
+    {% endif %}
+      <a href="#send" class="menuItem" style="text-decoration: none;color: black;font-weight: bold;font-size: 20px;" >CONTACT US</a>
+
+      <a href="{% url 'shop' %}" class="menuItem" style="text-decoration: none;color: black;font-weight: bold;font-size: 20px;">SHOP</a>
+
+      {% if not user.is_authenticated %}
+          <a href="{% url 'login' %}" class="menuItem" style="text-decoration: none;color: black;font-weight: bold;font-size: 20px;">LOGIN/SIGN UP</a>
+      {% else %}
+          <a href="{% url 'video' %}" class="menuItem" style="text-decoration: none;color: black;font-weight: bold;font-size: 20px;">VIDEOS</a>
+          <a href="{% url 'logout' %}" class="menuItem" style="text-decoration: none;color: black;font-weight: bold;font-size: 20px;">LOGOUT</a>
+      {% endif %}
+  </div>
+</header>

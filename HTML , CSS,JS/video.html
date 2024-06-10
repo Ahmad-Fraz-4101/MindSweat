@@ -1,0 +1,181 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Sweat</title>
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    <link rel="icon" type="image/png" href="{% static 'MindSweat.png' %}" >
+
+    <style>
+
+        #element
+         {
+            color: yellow;
+            font-weight: 900;
+            font-size: 70px;
+        }
+        h3{
+            color: yellow;
+            text-align: center;
+            font-size: 30px;
+        }
+        </style>
+
+</head>
+<body>
+    
+    {% include "header.html" %}
+
+        <div class="container">
+
+            <div id="online"><span id="element"></span> </div>
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script>
+                var typed = new Typed('#element', {
+                    strings: ['Watch And Learn'],
+                    typeSpeed: 30,
+                    loop: true
+                });
+            </script>
+            <br><br>
+        </div>
+            <h3 class="category">CHEST </h3>
+
+            <div class="video-grid">
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/t3f2L7NRRUY" frameborder="1" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/QENKPHhQVi4?si=E2reeykFU6DmJTxv" frameborder="1" allowfullscreen></iframe>
+                </div>
+
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/IODxDxX7oi4" frameborder="1" allowfullscreen></iframe>
+                </div>
+
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/rO_iEImwHyo" frameborder="1" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <br><br>
+            <h3 class="category">LEGS </h3>
+            <div class="video-grid">
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/xqvCmoLULNY?si=jOAGWMomuQayDo2L" title="YouTube video player" frameborder="1" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/8EMbB0tCn7Q?si=eO51B81cH_4rfXaU" frameborder="1" allowfullscreen></iframe>
+                </div>
+
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/3XDriUn0udo?si=Lm39LqAVV-7pO4Eu" frameborder="1" allowfullscreen></iframe>
+                </div>
+
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/dY7BmNR7RJk?si=o5FLLBEaw6sTbWjQ" frameborder="1" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <br><br>
+            <h3 class="category">BICEPS </h3>
+            <div class="video-grid">
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/XE_pHwbst04?si=RKGHG0GjeKO-KVjV" title="YouTube video player" frameborder="1" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/rDv6528rvf0?si=tD-2usG4ztltqJaK" frameborder="1" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <br><br>
+            <h3 >BACK </h3>
+            <div class="video-grid">
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/CAwf7n6Luuc?si=HOWgjgqFcSjokC9X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                </div>
+                <div class="video">
+                    <iframe  src="https://www.youtube.com/embed/vwHG9Jfu4sw?si=UfqbF935E0lYa-gE" frameborder="1" allowfullscreen></iframe>
+                </div>
+            </div>
+
+
+        
+   
+
+    
+    <section id="send">
+        <div id="footer">
+       
+           <div class="footerItem">
+               <h4>Contacts:<br><br>Sales and Support:</h4>
+               <br>
+               <p style="color: black;">042-121232<br>042-8976543<br>042-7654389</p>
+               <br>
+               <p style="color: black;"><span style="font-weight: 900; color: black;">Watsapp:</span> 03336004101 </p>
+               <br>
+               <p style="color: black;"><span style="font-weight: 900; color: black;">Email:</span> ahmadfraz4101@gmail.com </p>
+               <br>
+               <p style="color: black;"><span style="font-weight: 900; color: black;">Location:</span> Mughalpura,Lahore </p>
+           
+           </div>
+            <div class="footerItem" > 
+               <h4 style="text-align: center;">Affiliations</h4>
+               <img src="{%static 'tr.png'%}" alt="" style="width: 270px; height: 200px; margin-top: 130px; ">
+           </div>
+           <div class="footerItem">
+               <h4 style="text-align: center;">Bank Account Details</h4>
+               <div id="BankDetails" style="display: flex; flex-direction: column; justify-content: space-between;">
+                   
+                 
+                       <dl style="margin-top: 50px;">
+                         <!-- Bank Account 1 -->
+                         <dt>Habib Bank Limited</dt>
+                         <dd>
+                           <ul>
+                             <li>Account Type: Current</li>
+                             <li>Account Number: 123-3940-432</li>
+                             <li>IBAN: 123-456-789</li>
+                           </ul>
+                         </dd>
+                     
+                         <!-- Bank Account 2 -->
+                         <dt>Allied Bank Limited</dt>
+                         <dd>
+                           <ul>
+                             <li>Account Type: Current</li>
+                             <li>Account Number: 130-3940-45</li>
+                             <li>IBAN: 333-452-324</li>
+                           </ul>
+                         </dd>
+                       </dl>
+                     </div>
+                     
+             </div>
+               
+       
+               
+        </div>
+           
+    </section>
+
+    <script>
+        function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+         if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+              }
+                 }
+
+
+    function goToPage(url)
+    {
+       window.location.href = url;
+     }
+</script>
+
+</body>
+</html>

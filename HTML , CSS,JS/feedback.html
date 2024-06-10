@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Workout</title>
+    <link rel="icon" type="image/png" href="{% static 'MindSweat.png' %}" >
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        h1 {
+            text-align: center;
+            margin-right: 10px;
+            padding: 10px;
+            color: yellow;
+        }
+
+        .feed {
+            width: 900px;
+            background-color: rgb(63, 62, 62);
+            height: 100px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        p {
+            color: white;
+        }
+
+        .form-control {
+            font-size: 30px;
+            width: 400px;
+            height: 70px;
+            box-sizing: border-box;
+            margin-left: 50px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% include "header.html" %}
+    <h1 style="text-align: center;">Feedbacks</h1>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <form id="feedbackForm" method="post">
+            {% csrf_token %}
+            <input class="form-control" type="text" id="feedbackInput" name="feedback" placeholder="Give Your Feedback">
+            <button style="background-color: yellow; color: black; border-radius: 10px; padding: 5px;" type="submit">Submit</button>
+        </form>
+        <br>
+        <div id="feedbackContainer">
+            <!-- Existing feedbacks will be appended here -->
+            {% for feedbacks in feedback %}
+            <div class="feed">
+               <p>{{feedbacks.feedback}}</p>
+            </div>  
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
